@@ -18,9 +18,7 @@ if !exists("g:slime_cells_no_highlight") || !g:slime_cells_no_highlight
     " Steal the style of g:slime_cells_highlight_from
     exe "hi! CellBoundary gui=underline cterm=underline" . 
         \" guifg=" . synIDattr(synIDtrans(hlID(g:slime_cells_highlight_from)), "fg", "gui") .
-        \" ctermfg=" . synIDattr(synIDtrans(hlID(g:slime_cells_highlight_from)), "fg", "cterm") .
-        \" guibg=" . synIDattr(synIDtrans(hlID(g:slime_cells_highlight_from)), "bg", "gui") .
-        \" ctermbg=" . synIDattr(synIDtrans(hlID(g:slime_cells_highlight_from)), "bg", "cterm")
+        \" ctermfg=" . synIDattr(synIDtrans(hlID(g:slime_cells_highlight_from)), "fg", "cterm")
         
     autocmd TextChanged,TextChangedI,TextChangedP,BufWinEnter,BufWritePost,FileWritePost * :call slime_cells#sign_on_cell_boundaries()
 endif
